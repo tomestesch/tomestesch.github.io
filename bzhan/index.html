@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>b站 百科-B站百科_B站是什么_B站术语_弹幕文化_UP主与分区</title>
+<meta name="description" content="b站 百科是一个围绕哔哩哔哩（B站）的百科式内容站点，系统整理B站是什么、发展脉络、内容分区、弹幕文化、会员与等级、术语黑话、UP主生态与常用功能，帮助新用户快速入门，也方便老用户查漏补缺。">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fb7299'/%3E%3Cpath d='M18 24h28v20a4 4 0 0 1-4 4H22a4 4 0 0 1-4-4z' fill='%23fff'/%3E%3Cpath d='M22 24l-5-6M42 24l5-6' stroke='%23fff' stroke-width='4' stroke-linecap='round'/%3E%3Ccircle cx='26' cy='34' r='3' fill='%23fb7299'/%3E%3Ccircle cx='38' cy='34' r='3' fill='%23fb7299'/%3E%3Cpath d='M26 41c3 2 9 2 12 0' stroke='%23fb7299' stroke-width='3' stroke-linecap='round' fill='none'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --pink:#fb7299;
+    --pink-deep:#e0577f;
+    --blue:#23ade5;
+    --ink:#1f2329;
+    --ink-soft:#5b6470;
+    --line:#e6e8eb;
+    --paper:#f6f7f9;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:-apple-system,"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.8;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--pink-deep);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+
+  /* 顶部 */
+  .site-head{background:var(--white);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20;}
+  .site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;color:var(--ink);letter-spacing:.5px;}
+  .logo .dot{width:30px;height:30px;border-radius:9px;background:var(--pink);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800;}
+  .site-nav{display:flex;gap:22px;font-size:15px;}
+  .site-nav a{color:var(--ink-soft);}
+  .site-nav a:hover{color:var(--pink-deep);text-decoration:none;}
+
+  /* 首屏 */
+  .hero{background:linear-gradient(160deg,#fff0f5 0%,#ffffff 62%);border-bottom:1px solid var(--line);padding:52px 0 44px;}
+  .hero .wrap{display:grid;grid-template-columns:1.35fr .9fr;gap:36px;align-items:center;}
+  .hero h1{font-size:34px;line-height:1.35;margin:0 0 14px;letter-spacing:.5px;}
+  .hero h1 em{font-style:normal;color:var(--pink-deep);}
+  .tagline{font-size:17px;color:var(--ink-soft);margin:0 0 18px;}
+  .hero p.lead{font-size:15px;color:var(--ink-soft);margin:0;}
+  .hero-badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+  .hero-badges span{background:#fff;border:1px solid #f3d3e0;color:var(--pink-deep);padding:5px 13px;border-radius:20px;font-size:13.5px;}
+  .hero-panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:0 8px 24px rgba(31,35,41,.05);}
+  .hero-panel h2{font-size:15px;margin:0 0 12px;color:var(--pink-deep);letter-spacing:1px;}
+  .hero-panel ol{margin:0;padding-left:20px;font-size:14.5px;color:var(--ink-soft);}
+  .hero-panel li{margin-bottom:9px;}
+  .hero-panel li:last-child{margin-bottom:0;}
+
+  /* 主体区 */
+  main{padding:44px 0 20px;}
+  .block{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px 32px;margin-bottom:26px;}
+  .block h2{font-size:23px;margin:0 0 16px;padding-left:14px;border-left:4px solid var(--pink);line-height:1.4;}
+  .block h3{font-size:17px;margin:22px 0 8px;color:var(--ink);}
+  .block p{margin:0 0 14px;color:#33383f;}
+  .block p:last-child{margin-bottom:0;}
+
+  .points{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:10px 24px;}
+  .points li{position:relative;padding-left:20px;font-size:14.8px;color:var(--ink-soft);}
+  .points li::before{content:"";position:absolute;left:2px;top:11px;width:7px;height:7px;border-radius:50%;background:var(--blue);}
+
+  /* 分区表 */
+  .zone-table{width:100%;border-collapse:collapse;margin-top:16px;font-size:14.6px;}
+  .zone-table th,.zone-table td{border:1px solid var(--line);padding:11px 14px;text-align:left;vertical-align:top;}
+  .zone-table th{background:#fff5f8;color:var(--pink-deep);font-weight:600;white-space:nowrap;}
+  .zone-table td{color:#3a4048;}
+
+  /* 术语卡 */
+  .term-list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px;}
+  .term{background:var(--paper);border-radius:10px;padding:16px 18px;}
+  .term strong{display:block;font-size:15.5px;color:var(--pink-deep);margin-bottom:5px;}
+  .term span{font-size:14.3px;color:var(--ink-soft);}
+
+  /* 步骤 */
+  .steps{counter-reset:step;list-style:none;padding:0;margin:18px 0 0;}
+  .steps li{position:relative;padding:0 0 18px 46px;border-left:2px solid #f7dbe6;margin-left:14px;}
+  .steps li:last-child{border-left-color:transparent;padding-bottom:0;}
+  .steps li::before{counter-increment:step;content:counter(step);position:absolute;left:-15px;top:0;width:28px;height:28px;border-radius:50%;background:var(--pink);color:#fff;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .steps strong{display:block;font-size:15.5px;margin-bottom:4px;}
+  .steps span{font-size:14.4px;color:var(--ink-soft);}
+
+  /* 注意区 */
+  .notice{background:#f2f9fd;border:1px solid #cfe9f6;border-radius:12px;padding:20px 24px;margin-top:18px;}
+  .notice h3{margin-top:0;color:#1b8cb8;}
+  .notice ul{margin:0;padding-left:20px;color:#3a4048;font-size:14.6px;}
+  .notice li{margin-bottom:7px;}
+
+  /* FAQ */
+  details.faq{background:#fff;border:1px solid var(--line);border-radius:10px;padding:0 20px;margin-bottom:12px;}
+  details.faq summary{cursor:pointer;font-weight:600;font-size:16px;padding:16px 0;list-style:none;position:relative;padding-right:30px;}
+  details.faq summary::-webkit-details-marker{display:none;}
+  details.faq summary::after{content:"+";position:absolute;right:2px;top:14px;color:var(--pink);font-size:20px;font-weight:400;}
+  details.faq[open] summary::after{content:"−";}
+  details.faq .ans{padding:0 0 16px;color:var(--ink-soft);font-size:15px;border-top:1px dashed var(--line);padding-top:14px;}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,#fb7299,#fc9ab7);color:#fff;border-radius:14px;padding:34px 32px;text-align:center;margin-bottom:26px;}
+  .cta h2{margin:0 0 10px;font-size:24px;border:none;padding:0;}
+  .cta p{margin:0;font-size:15.5px;opacity:.95;}
+
+  /* 页脚 */
+  footer.site-foot{background:#fff;border-top:1px solid var(--line);padding:26px 0;margin-top:20px;}
+  footer.site-foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13.8px;color:var(--ink-soft);}
+  footer.site-foot a{color:var(--ink-soft);}
+  footer.site-foot a:hover{color:var(--pink-deep);}
+
+  @media (max-width:820px){
+    .hero .wrap{grid-template-columns:1fr;gap:26px;}
+    .hero h1{font-size:27px;}
+    .points{grid-template-columns:1fr;}
+    .term-list{grid-template-columns:1fr;}
+    .site-nav{display:none;}
+    .block{padding:24px 20px;}
+    .zone-table{font-size:13.6px;}
+    .zone-table th,.zone-table td{padding:9px 10px;}
+    .cta{padding:28px 20px;}
+  }
+  @media (max-width:520px){
+    .hero{padding:36px 0 30px;}
+    .hero h1{font-size:23px;}
+    .tagline{font-size:15.5px;}
+    .block h2{font-size:20px;}
+    .cta h2{font-size:20px;}
+    .zone-table{display:block;overflow-x:auto;white-space:nowrap;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <div class="logo"><span class="dot">B</span>b站 百科</div>
+    <nav class="site-nav" aria-label="页面导航">
+      <a href="#what">B站是什么</a>
+      <a href="#zones">内容分区</a>
+      <a href="#terms">术语表</a>
+      <a href="#danmaku">弹幕文化</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>b站 百科：把哔哩哔哩的<em>概念、分区与术语</em>讲清楚</h1>
+      <p class="tagline">从“B站是什么”到弹幕、等级、会员、UP主与内容分区，一份可以反复查阅的入门百科。</p>
+      <p class="lead">第一次打开哔哩哔哩，满屏滚动的弹幕、看不懂的缩写、分不清的“投币”和“充电”，都会让人有点懵。b站 百科把这些零散知识点整理成可查阅的条目，帮助你理解平台结构、使用规则和文化语境。</p>
+      <div class="hero-badges">
+        <span>平台概念</span><span>内容分区</span><span>弹幕文化</span><span>会员与等级</span><span>术语黑话</span>
+      </div>
+    </div>
+    <aside class="hero-panel">
+      <h2>新手先看这四件事</h2>
+      <ol>
+        <li>B站是视频社区，不是单纯的播放器。</li>
+        <li>内容按分区组织，投稿时要选对分区。</li>
+        <li>弹幕是叠加在视频上的评论形式，可开关。</li>
+        <li>等级、会员、硬币属于不同的体系，别混为一谈。</li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <!-- 1. B站是什么 -->
+  <section class="block" id="what">
+    <h2>B站是什么：先建立最基础的概念框架</h2>
+    <p>b站 百科首先要回答的是“B站是什么”。B站是哔哩哔哩的常用简称，它是一个以视频内容为主的社区平台，用户可以观看视频、发布投稿、发表评论和弹幕，也可以围绕兴趣形成相对稳定的内容圈层。和普通视频网站相比，B站更强调社区氛围与创作生态，内容从动画、游戏扩展到知识、生活、科技、美食、音乐等大量领域。</p>
+    <p>理解B站，需要把几个层面分开看：一是内容层，也就是各类分区和视频；二是互动层，包括弹幕、评论、点赞、投币、收藏、转发；三是身份层，涉及账号等级、会员、粉丝牌等；四是创作层，指UP主投稿、连载、直播等行为。把这几层分开，很多看起来复杂的规则就会清晰。</p>
+    <p>在b站 百科的语境里，“百科”不是要替代官方说明，而是把公开可观察到的平台结构和常见用法整理成便于检索的知识条目。遇到具体规则时，仍应以平台最新页面提示为准，因为产品功能和界面会持续调整。</p>
+    <ul class="points">
+      <li>B站是哔哩哔哩的简称，核心形态是视频社区。</li>
+      <li>内容以分区为骨架，投稿需要选择合适分区。</li>
+      <li>互动以弹幕和评论为代表，二者定位不同。</li>
+      <li>账号、等级、会员、硬币是不同维度的体系。</li>
+    </ul>
+  </section>
+
+  <!-- 2. 分区 -->
+  <section class="block" id="zones">
+    <h2>内容分区：B站内容是怎么被组织的</h2>
+    <p>分区是理解B站内容结构的关键。平台把投稿按主题归入不同分区，用户在首页、分区页和搜索结果中浏览内容。分区既是分类方式，也是投稿时的选择项。对观众来说，分区帮助快速找到感兴趣的方向；对创作者来说，分区影响内容被谁看到。</p>
+    <p>下面这张表是b站 百科对常见分区方向的归纳，用于建立整体印象。具体分区名称、子分区和入口位置会随平台调整而变化，实际以站内展示为准。</p>
+    <table class="zone-table">
+      <thead>
+        <tr><th>分区方向</th><th>主要内容</th><th>常见形式</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>动画</td><td>动画作品、番剧相关讨论、手书与二创</td><td>连载观看、剪辑、解说</td></tr>
+        <tr><td>游戏</td><td>游戏实况、攻略演示、赛事与评测</td><td>录播、直播切片、教程</td></tr>
+        <tr><td>知识</td><td>科普、课程、历史、法律、语言学习</td><td>长视频讲解、系列课</td></tr>
+        <tr><td>科技</td><td>数码产品、软件工具、编程与硬件</td><td>测评、装机、开发记录</td></tr>
+        <tr><td>生活</td><td>日常记录、旅行、美食、手工</td><td>Vlog、探店、教程</td></tr>
+        <tr><td>音乐</td><td>原创音乐、翻唱、演奏与音乐制作</td><td>MV、现场、教学</td></tr>
+        <tr><td>影视</td><td>影视解说、剪辑、影评与幕后</td><td>解说、混剪、盘点</td></tr>
+        <tr><td>鬼畜</td><td>以素材重复与节奏剪辑为特色的二创</td><td>调音、混剪、恶搞</td></tr>
+      </tbody>
+    </table>
+    <p>选择分区时，创作者常遇到的困惑是“内容跨多个领域该投哪里”。一般建议按内容主体判断，而不是按素材来源判断。例如用游戏画面讲历史知识，主体若是知识讲解，就更接近知识类内容。分区选得准确，有助于内容被目标观众发现。</p>
+  </section>
+
+  <!-- 3. 术语 -->
+  <section class="block" id="terms">
+    <h2>术语表：看懂B站评论区常用的说法</h2>
+    <p>新用户最大的障碍往往不是功能，而是语言。b站 百科整理了一批高频术语，帮助你在浏览视频和评论区时不再一头雾水。这些词大多来自社区长期使用，含义相对稳定，但也会随语境变化。</p>
+    <div class="term-list">
+      <div class="term"><strong>UP主</strong><span>指在平台发布投稿的创作者，源自“上传者”的说法，是B站内容生态的核心角色。</span></div>
+      <div class="term"><strong>弹幕</strong><span>叠加在视频画面上、按时间点滚动的短评论，可开启或关闭，是B站标志性互动形式。</span></div>
+      <div class="term"><strong>投币</strong><span>用硬币对喜欢的视频表达支持的一种互动方式，硬币通过日常使用和任务获得。</span></div>
+      <div class="term"><strong>充电</strong><span>观众对创作者进行支持的功能，属于创作激励体系的一部分，具体规则以站内说明为准。</span></div>
+      <div class="term"><strong>三连</strong><span>点赞、投币、收藏三个动作的合称，常被创作者用来提醒观众支持内容。</span></div>
+      <div class="term"><strong>追番</strong><span>对番剧或连载内容进行订阅，更新时便于找到后续剧集。</span></div>
+      <div class="term"><strong>鬼畜</strong><span>以素材重复、节奏化剪辑为特征的二创形式，也是独立分区名称。</span></div>
+      <div class="term"><strong>空降</strong><span>观众跳过片头直接进入正片，常配合弹幕中的时间点提示使用。</span></div>
+      <div class="term"><strong>前方高能</strong><span>弹幕提示语，提醒后面可能出现精彩、惊悚或反转内容。</span></div>
+      <div class="term"><strong>一键三连</strong><span>与“三连”同义，强调便捷地完成点赞、投币、收藏。</span></div>
+    </div>
+    <p>需要说明的是，同一个词在不同分区可能有细微差别。b站 百科建议结合上下文理解，不必把某个解释当成唯一标准。遇到不确定的缩写，可以先看视频标题、分区和评论区语境，再判断含义。</p>
+  </section>
+
+  <!-- 4. 弹幕文化 -->
+  <section class="block" id="danmaku">
+    <h2>弹幕文化：B站最具辨识度的互动方式</h2>
+    <p>弹幕是把观众评论按视频时间点叠加显示在画面上的机制。它的价值在于“共时感”：你看到的某条弹幕，可能来自很久以前，也可能来自刚刚，但都对应同一个画面瞬间。b站 百科把弹幕看作一种特殊的社区语言，它既是评论，也是观看体验的一部分。</p>
+    <h3>弹幕的常见类型</h3>
+    <p>常见弹幕大致可以分为几类：情绪反应类，如“哈哈哈”“泪目”；提示类，如“前方高能”“注意看这里”；时间点类，如“空降成功”；梗与玩梗类，依赖社区共同记忆；以及补充说明类，为画面提供背景信息。不同类型弹幕的密度和效果差别很大。</p>
+    <h3>弹幕礼仪与使用建议</h3>
+    <p>弹幕是公开可见的，因此需要遵守基本礼仪。避免在严肃内容中刷无关信息，避免剧透关键情节，避免人身攻击和引战。对创作者而言，合理的弹幕引导可以提升观看体验；对观众而言，适度关闭弹幕有时反而更适合学习类、教程类内容。</p>
+    <ul class="points">
+      <li>弹幕可按时间点对应画面，具有共时观看感。</li>
+      <li>提示类弹幕能帮助理解，但也可能造成干扰。</li>
+      <li>剧透、引战和攻击性内容不适合以弹幕形式出现。</li>
+      <li>多数场景可以调节弹幕开关、透明度和显示区域。</li>
+    </ul>
+  </section>
+
+  <!-- 5. 账号体系 -->
+  <section class="block" id="account">
+    <h2>账号、等级与会员：三套容易混淆的体系</h2>
+    <p>很多新用户会把“等级”“会员”“硬币”混在一起。b站 百科在这里做一个区分：账号等级反映使用与互动积累，会员涉及特定权益，硬币是互动中的一种资源，三者来源和用途不同，不能互相替代。</p>
+    <p>等级通常通过观看、登录、互动等行为逐步提升，不同等级对应不同的弹幕和互动权限。会员体系则与内容权益相关，具体权益范围和开通方式以站内页面为准。硬币主要用于对投稿表达支持，获得方式与日常使用行为有关。</p>
+    <p>理解这些体系的现实意义在于：当你发现某些功能暂时不可用时，先判断它属于哪套体系，再去看对应的规则说明，而不是笼统地认为“账号有问题”。这也是b站 百科希望帮助访问者建立的判断习惯。</p>
+    <ul class="points">
+      <li>等级与会员是两套独立体系，不要混为一谈。</li>
+      <li>硬币是互动资源，主要用于支持投稿。</li>
+      <li>部分互动权限与账号状态相关，具体以站内提示为准。</li>
+      <li>遇到功能限制，先定位属于哪套体系再查规则。</li>
+    </ul>
+  </section>
+
+  <!-- 6. 使用路径 -->
+  <section class="block" id="howto">
+    <h2>从零开始：一个新用户的使用路径</h2>
+    <p>如果你刚接触B站，可以按下面的顺序建立基本认知。b站 百科不建议一上来就研究所有功能，先跑通“看内容—做互动—找分区”的主线，再逐步了解创作相关功能会更轻松。</p>
+    <ol class="steps">
+      <li><strong>完成基础账号设置</strong><span>注册并完善资料，了解昵称、头像和隐私相关选项，先让账号处于正常可用状态。</span></li>
+      <li><strong>用分区和搜索找内容</strong><span>从感兴趣的分区进入，配合搜索关键词定位视频，注意区分综合排序和最新发布等不同结果。</span></li>
+      <li><strong>熟悉播放页的互动区</strong><span>了解弹幕开关、清晰度、播放速度、点赞、投币、收藏、转发等基础操作的位置。</span></li>
+      <li><strong>建立自己的内容清单</strong><span>用收藏和关注把常看的内容沉淀下来，避免每次重新搜索，也便于追踪连载内容。</span></li>
+      <li><strong>再了解创作与投稿</strong><span>当你有发布需求时，再去看投稿入口、分区选择和稿件规范，避免过早被复杂规则劝退。</span></li>
+    </ol>
+    <p>这条路径的核心是先建立“平台结构感”。当你知道内容在哪里、互动怎么发生、账号体系如何运作，后续遇到新功能时也更容易自行理解。</p>
+  </section>
+
+  <!-- 7. 创作生态 -->
+  <section class="block" id="creator">
+    <h2>UP主与创作生态：内容是怎么被生产出来的</h2>
+    <p>UP主是B站内容供给的主体。投稿形式包括长视频、短视频、直播、专栏等，不同形式适合不同内容。b站 百科观察到的常见路径是：先确定内容方向与分区，再稳定更新形成系列，最后通过互动和社区反馈调整选题。</p>
+    <p>对观众来说，理解创作侧有助于更理性地看待内容。更新频率受选题难度、制作成本和创作者个人安排影响，并非所有账号都能保持高频更新。看到“催更”时，也可以理解这背后是真实的时间投入。</p>
+    <p>对想尝试创作的人来说，最需要关注的是三件事：内容是否有明确主题、分区选择是否准确、标题与封面是否与内容相符。这三点直接影响内容能否被目标观众发现，也关系到社区体验。</p>
+    <ul class="points">
+      <li>投稿形式多样，长视频、短视频、直播各有适用场景。</li>
+      <li>系列化更新有助于形成稳定的观看预期。</li>
+      <li>标题与封面应与内容一致，避免误导性表达。</li>
+      <li>更新节奏受制作成本影响，不必以频率判断内容价值。</li>
+    </ul>
+  </section>
+
+  <!-- 8. 注意事项 -->
+  <section class="block" id="notice">
+    <h2>使用提醒：查百科时要注意什么</h2>
+    <p>b站 百科提供的是概念梳理和常识性说明，不能替代平台官方规则。平台功能、分区名称、权益范围都可能调整，因此涉及具体操作和权益判断时，应以站内最新提示为准。</p>
+    <div class="notice">
+      <h3>三个稳妥的判断习惯</h3>
+      <ul>
+        <li>看到“必须”“一定能”这类绝对说法时，先回到站内页面核对。</li>
+        <li>区分“社区习惯说法”和“平台正式规则”，两者不完全等同。</li>
+        <li>涉及账号安全、支付和隐私的操作，只通过官方入口完成。</li>
+      </ul>
+    </div>
+    <p>另外，社区术语变化较快，某些梗可能只在特定分区流行。b站 百科的术语解释用于建立基础理解，遇到陌生说法时，结合视频语境判断通常比死记定义更有效。</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block" id="faq">
+    <h2>常见问题</h2>
+    <details class="faq" open>
+      <summary>B站和哔哩哔哩是同一个东西吗？</summary>
+      <div class="ans">是。“B站”是哔哩哔哩的常用简称，日常交流中两者指同一个平台。b站 百科在行文中会根据语境交替使用这两个说法，含义一致。</div>
+    </details>
+    <details class="faq">
+      <summary>弹幕可以关闭吗？</summary>
+      <div class="ans">通常可以在播放页调整弹幕的显示与关闭，也可以设置透明度、显示区域等参数。具体入口位置会随版本变化，以你当前使用的页面为准。学习类、教程类内容关闭弹幕往往更专注。</div>
+    </details>
+    <details class="faq">
+      <summary>等级、会员和硬币有什么区别？</summary>
+      <div class="ans">等级反映账号的使用与互动积累，会员涉及特定内容或功能权益，硬币是互动中用于支持投稿的资源。三者来源和用途不同，不能互相替代，遇到功能限制时先判断属于哪套体系。</div>
+    </details>
+    <details class="faq">
+      <summary>投稿时分区选错了怎么办？</summary>
+      <div class="ans">分区影响内容被谁看到，选错会降低匹配度。一般建议按内容主体而非素材来源判断分区；如果已经发布，可查看站内是否提供修改入口，具体以投稿管理页面提示为准。</div>
+    </details>
+    <details class="faq">
+      <summary>“三连”“投币”“充电”分别是什么意思？</summary>
+      <div class="ans">“三连”指点赞、投币、收藏三个动作；“投币”是用硬币支持投稿；“充电”是观众支持创作者的功能。它们都属于互动或支持行为，具体规则和额度以站内说明为准。</div>
+    </details>
+    <details class="faq">
+      <summary>b站 百科是官方网站吗？</summary>
+      <div class="ans">不是。b站 百科是围绕B站概念、分区、术语和文化整理的百科式内容页面，用于帮助访问者建立基础认知，不代表平台官方立场，也不替代官方规则说明。</div>
+    </details>
+  </section>
+
+  <section class="cta">
+    <h2>从一个概念开始，把B站看懂</h2>
+    <p>先弄清分区与术语，再理解弹幕和账号体系，你会发现这个社区的逻辑其实并不复杂。</p>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>b站 百科 · 哔哩哔哩概念、分区与术语的内容整理</span>
+    <span>内容仅供学习参考，具体规则以平台官方页面为准</span>
+  </div>
+</footer>
+
+</body>
+</html>
